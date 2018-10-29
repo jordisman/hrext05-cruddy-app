@@ -3,8 +3,20 @@
 #### Basic Improvments (requirements)
 
 - [ ] create indivdiual items
+        create an unorder list structure in html
+        add new note on click of the button
+        create a function that will add input text to the list 
+
+        
 - [ ] delete individual items
+        remove text in notes when click on the item
+        
 - [ ] edit individual items
+        change text content
+        add ability to toggle a single item
+        click and drag to reorder the item
+        click the item to mark as complete
+        
 
 ##### Notes
 - [ ] Keep DOM and localStorage matching 
@@ -32,4 +44,5 @@
 - [ ] bootstrap/material (css library)
 
 #### My Spin
-(to be filled out by you)
+add css to beautify the interface
+add animation effect with jQuery
