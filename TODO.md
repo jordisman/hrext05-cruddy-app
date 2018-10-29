@@ -47,5 +47,6 @@
 - [ ] bootstrap/material (css library)
 
 #### My Spin
-add css to beautify the interface
-add animation effect with jQuery
+
+    - add css to beautify the interface
+    - add animation effect with jQuery
