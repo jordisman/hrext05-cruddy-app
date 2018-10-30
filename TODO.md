@@ -6,7 +6,8 @@
 
         - create an unorder list structure in html
         - add new note on click of the button
-        - create a function that will add input text to the list 
+        - use jquery to update display
+        - create function that will add input text to the list 
 
         
 - [ ] delete individual items
@@ -48,5 +49,5 @@
 
 #### My Spin
 
-    - add css to beautify the interface
-    - add animation effect with jQuery
+    - add css to beautify the interface (practice css)
+    - add animation effect with jQuery UI (explore more jquery)
