@@ -5,21 +5,21 @@
 - [ ] create indivdiual items
 
         - create an unorder list structure in html
-        - add new note on click of the button
-        - use jquery to update display
-        - create function that will add input text to the list 
+        - add new list item to ToDo list when add-text-btn is clicked
+        - append the new list item to the ToDo list 
+        - create function that will store input items to the list 
 
         
 - [ ] delete individual items
 
-        - remove text in notes when click on the item
+        - remove a task from the ToDo list when the delete button is clicked
         
 - [ ] edit individual items
 
-        - change text content
+        - change text content by clicking on edit button
         - add ability to toggle a single item
-        - click and drag to reorder the item
-        - click the item to mark as complete
+        - click and drag to reorder the items
+        - click the item to mark as completed
         
 
 ##### Notes
