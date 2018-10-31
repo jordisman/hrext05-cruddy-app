@@ -19,7 +19,7 @@
         - change text content by clicking on edit button
         - add ability to toggle a single item
         - click and drag to reorder the items
-        - click the item to mark as completed
+        - click the item to mark as complete
         
 
 ##### Notes
