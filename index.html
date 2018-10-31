@@ -4,12 +4,19 @@
     <title>HREXT05 Cruddy App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   </head>
   <body>
-    <input type="text" class="text-input" id="theKey" placeholder="Enter some text">
-    <button class="add-text-btn">Add text</button>
-    <button class="clear-cache-btn">Clear Entries</button>
-    <div class="show-text"></div>
-  </body>
+    <div class="container">
+        <h1>Daily Task Manager</h1>
+            <ul id="show-text-list"></ul>
+            <form class="add-items">
+                <input type="text" class="text-input" id="task-list-item" placeholder="Add new task here...">
+                <button class="add" type="submit">Add to List</button>
+            </form>
+        </div>
+    </body>
 </html>
