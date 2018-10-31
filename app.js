@@ -1,30 +1,39 @@
-/*
-listen for click event (edit)
-update text in local storage (with key)
-update display with new text value
+$(document).ready(function() {
+  // console.log("before\n", window.localStorage);
 
+  $('#show-text-list').html(localStorage.getItem('listItems'));
 
- */
+  $('.add-items').submit(function(event) {
+    event.preventDefault();
 
-$(document).ready(function(){
-  console.log("before\n", window.localStorage);
+    var item = $('#task-list-item').val();
 
-  // add event listener
-  $(".add-text-btn").on("click", function(){
-    $(".show-text").empty();
-    var curTextValue = $('#theKey').val(); // reading from <input>
-    var curKeyValue = "theKey"; // change to dynamic key?
-    localStorage.setItem(curKeyValue, curTextValue);
-    $(".show-text").append(curTextValue);
+    if (item) {
+      var checkbox = "<li><input class='checkbox' type='checkbox'>";
+      var remove = "<a class='remove'> X </a><hr></li>";
+      //create x to remove item, add hrizontal line below
+      //<li><input class='checkbox' type='checkbox'>item<a class='remove'>x</a><hr></li>
+      $('#show-text-list').append(checkbox + item + remove);
+
+      localStorage.setItem('listItems', $('#show-text-list').html());
+      $('.text-input').val(""); //clear input text field
+    }
+  }); //end of $('.add-items').submit
+
+  $(document).on('change', '.checkbox', function() {
+    if ($(this).attr('checked')) {
+      $(this).removeAttr('checked');
+    } else {
+      $(this).attr('checked', 'checked');
+    }
+    $(this).parent().toggleClass('strike');
+
+    localStorage.setItem('listItems', $('#show-text-list').html());
   });
 
-  // remove item from app
-
-  // listen for click event (del)
-  $(".clear-cache-btn").on("click", function(){
-    // clear local storage
-    localStorage.clear();
-    $(".show-text").empty();
+  $(document).on('click', '.remove', function() {
+    $(this).parent().fadeOut('slow');
+    localStorage.setItem('listItems', $('#show-text-list').html());
   });
 
 });
