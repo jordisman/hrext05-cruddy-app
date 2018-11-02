@@ -2,21 +2,22 @@
 <html>
   <head>
     <title>HREXT05 Cruddy App</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='app.js'></script>
+    <link rel='stylesheet' href='style.css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet'>
+    <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
   </head>
   <body>
-    <div class="container">
-        <h1>Daily Task Manager</h1>
-            <ul id="show-text-list"></ul>
-            <form class="add-items">
-                <input type="text" class="text-input" id="task-list-item" placeholder="Add new task here...">
-                <button class="add" type="submit">Add to List</button>
+    <div  class='container'>
+        <h1>Your Task Manager</h1>
+        <p>Click and drag to reorder items, check box to cross an item off, click X to remove.</p>
+            <form class='add-todo'>
+                <input type='text' class='text-input' id='todo-list-item' placeholder='Add new todo...'>
+                <button class='add-button' type='submit'>Add to List</button>
             </form>
+              <ul id='show-todo-list' contenteditable="true"></ul>
         </div>
     </body>
 </html>
