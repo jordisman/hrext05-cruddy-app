@@ -23,13 +23,15 @@ $(document).ready(function() {
     }
   }); //end of $('.add-todo').submit()
 
-  //https://api.jquery.com/change/
+  /*
+  The change event is sent to an element when its value changes. This event is limited to <input>, <textarea> and <select>. For select boxes, checkboxes, and radio buttons, the event is fired immediately when the user makes a selection with the mouse.
+  */
   $(document).on('change', '.checkbox', function() {
-    if ($(this).attr('checked')) {
-      $(this).removeAttr('checked');
-    } else {
-      $(this).attr('checked', 'checked');
-    }
+    // if ($(this).attr('checked')) {
+    //   $(this).removeAttr('checked');
+    // } else {
+    //   $(this).attr('checked', 'checked');
+    // }
     $(this).parent().toggleClass('strike');
 
     localStorage.setItem('theKey', $('#show-todo-list').html());
@@ -40,7 +42,7 @@ $(document).ready(function() {
     localStorage.setItem('theKey', $('#show-todo-list').html());
   });
 
-  // ul.contenteditable = "true";
+  ul.contenteditable = "true";
 
   $(function() {
     $('#show-todo-list').sortable();
