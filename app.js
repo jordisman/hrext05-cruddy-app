@@ -1,25 +1,29 @@
 $(document).ready(function() {
   // console.log("before\n", window.localStorage);
 
-  $('#show-text-list').html(localStorage.getItem('listItems'));
+  $('#show-todo-list').html(localStorage.getItem('theKey'));
 
-  $('.add-items').submit(function(event) {
-    event.preventDefault();
+  $('.add-todo').submit(function(event) { //submit only work in forms
+    event.preventDefault(); //Prevent a submit button from submitting a form //cursor stays
 
-    var item = $('#task-list-item').val();
+    var item = $('#todo-list-item').val();
+    var checkbox = "<li><input class='checkbox' type='checkbox'>";
+    var remove = "<a class='remove'> X </a></li>";
+    //create x to remove item
+    //<li><input class='checkbox' type='checkbox'>item<a class='remove'>x</a><hr></li>
 
     if (item) {
-      var checkbox = "<li><input class='checkbox' type='checkbox'>";
-      var remove = "<a class='remove'> X </a><hr></li>";
-      //create x to remove item, add hrizontal line below
-      //<li><input class='checkbox' type='checkbox'>item<a class='remove'>x</a><hr></li>
-      $('#show-text-list').append(checkbox + item + remove);
+      //add checkbox and remove x
+      $('#show-todo-list').append(checkbox + item + remove);
 
-      localStorage.setItem('listItems', $('#show-text-list').html());
+      localStorage.setItem('theKey', $('#show-todo-list').html());
+
       $('.text-input').val(""); //clear input text field
+      // $('.text-input').empty(); //empty doesn't work
     }
-  }); //end of $('.add-items').submit
+  }); //end of $('.add-todo').submit()
 
+  //https://api.jquery.com/change/
   $(document).on('change', '.checkbox', function() {
     if ($(this).attr('checked')) {
       $(this).removeAttr('checked');
@@ -28,12 +32,22 @@ $(document).ready(function() {
     }
     $(this).parent().toggleClass('strike');
 
-    localStorage.setItem('listItems', $('#show-text-list').html());
+    localStorage.setItem('theKey', $('#show-todo-list').html());
   });
 
   $(document).on('click', '.remove', function() {
-    $(this).parent().fadeOut('slow');
-    localStorage.setItem('listItems', $('#show-text-list').html());
+    $(this).parent().remove();
+    localStorage.setItem('theKey', $('#show-todo-list').html());
+  });
+
+  // ul.contenteditable = "true";
+
+  $(function() {
+    $('#show-todo-list').sortable();
+    $('#show-todo-list').disableSelection();
+  });
+  $(function() {
+    $('.container').resizable();
   });
 
 });
